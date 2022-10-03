@@ -7,7 +7,6 @@ import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
 import Rating from "@material-ui/lab/Rating";
 import { mapStyles } from "../material-styles";
 import { snazzyMapStyles } from "../material-styles/snazzyMapStyles";
-import { Marker } from "@react-google-maps/api";
 
 // type Props = {
 //   setCoordinates: (coordinates: { lat: number; lng: number }) => void;
