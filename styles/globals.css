@@ -4,6 +4,8 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   padding: 0;
   margin: 0;
+  /* A cool linear gradient background color from  tomato to a deep blue */
+  background: #FCF6F5FF !important;
 }
 
 a {
@@ -13,4 +15,8 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+input::placeholder {
+  color: #FCF6F5FF !important;
 }

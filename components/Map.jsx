@@ -7,6 +7,7 @@ import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
 import Rating from "@material-ui/lab/Rating";
 import { mapStyles } from "../material-styles";
 import { snazzyMapStyles } from "../material-styles/snazzyMapStyles";
+import DropDownIcon from "@material-ui/icons/ExpandMore";
 
 // type Props = {
 //   setCoordinates: (coordinates: { lat: number; lng: number }) => void;
@@ -27,10 +28,55 @@ const Map = ({
 }) => {
   const classes = mapStyles();
   const isMobile = useMediaQuery("(min-width: 600px)");
+  const [toggleMap, setToggleMap] = React.useState(false);
 
   console.log({ places });
   return (
-    <div className={classes.mapContainer}>
+    <div className={`${classes.mapContainer} ${
+      toggleMap ? classes.mapContainerToggle : ""
+    }`}>
+      <header className={classes.header}>
+        <div className={classes.header__text}>
+          <Typography variant="h5" gutterBottom className={classes.h1}>
+            Explore Nearby
+          </Typography>
+          {isMobile && (
+            <Typography variant="subtitle2" gutterBottom className={classes.h2}>
+              {weatherData
+                ? `Weather in ${weatherData?.name}, ${weatherData?.sys?.country}`
+                : "Weather"}
+            </Typography>
+          )}
+        </div>
+        <div className={classes.weather__container}>
+          {weatherData &&
+            weatherData?.weather?.map((data, i) => (
+              <div key={i} className={classes.weather__box}>
+                <img
+                  src={`http://openweathermap.org/img/w/${data?.icon}.png`}
+                  alt="weather"
+                />
+                <Typography variant="subtitle2">
+                  {new Date(weatherData?.dt * 1000).toLocaleString("en-US", {
+                    hour: "numeric",
+                  })}
+                </Typography>
+              </div>
+            ))}
+        </div>
+        <div
+          className={`${classes.toggle__icon} ${
+            toggleMap ? classes.toggle__icon__active : ""
+          }`}
+        >
+          <DropDownIcon
+            onClick={() => setToggleMap(!toggleMap)}
+            fontSize="large"
+            cursor="pointer"
+          />
+        </div>
+      </header>
+
       <GoogleMap
         bootstrapURLKeys={{
           key: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "",

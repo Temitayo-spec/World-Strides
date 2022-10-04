@@ -10,9 +10,24 @@ export const mapStyles = makeStyles(() => ({
     width: "100%",
   },
   mapContainer: {
-    height: "88vh",
+    height: "100vh",
     width: "100%",
-    position: "relative",
+    position: "fixed",
+    left: 0,
+    bottom: 0,
+    zIndex: 1,
+    padding: "2em",
+    borderRadius: "0.5em",
+    transition: "all 0.5s ease",
+  },
+  h1: {
+    fontSize: "2em",
+    color: "#3c3c3c",
+    textAlign: "center",
+  },
+  h2: {
+    fontSize: "1.2em",
+    color: "#666",
   },
   markerContainer: {
     position: "absolute",
@@ -25,5 +40,21 @@ export const mapStyles = makeStyles(() => ({
   },
   typography: {
     fontSize: "0.4rem",
+  },
+  header: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: "0.5em",
+    backgroundColor: "white",
+    borderRadius: "0.5em 0.5em 0 0",
+    boxShadow: "0 0 5px 0 rgba(0,0,0,0.2)",
+  },
+  toggle__icon__active: {
+    color: "#3c3c3c",
+    transform: "rotate(180deg)",
+  },
+  mapContainerToggle: {
+    height: "18vh",
   },
 }));

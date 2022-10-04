@@ -2,13 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export const placeStyles = makeStyles((theme) => ({
   root: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    width: "100%",
-    height: "100%",
-    padding: "0 1rem",
-    boxSizing: "border-box",
+    color: "#990011FF !important",
   },
   spacing: {
     margin: "1rem 0",

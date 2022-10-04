@@ -4,10 +4,10 @@ export const headerStyles = makeStyles((theme) => ({
   toolbar: {
     display: "flex",
     justifyContent: "space-between",
-    backgroundColor: "#1e1e1e",
+    background: "#990011FF",
+    height: "4em",
   },
   title: {
-    display: "none",
     [theme.breakpoints.up("sm")]: {
       display: "block",
     },

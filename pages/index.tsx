@@ -33,7 +33,7 @@ const Home: NextPage = () => {
       (place: any) => place.rating > rating
     );
     setFilteredPlaces(filteredPlaces);
-  }, [rating]);
+  }, [allPlaces, rating]);
 
   useEffect(() => {
     if (bounds.sw && bounds.ne) {
@@ -68,18 +68,15 @@ const Home: NextPage = () => {
         <CssBaseline />
         <Header setCoordinates={setCoordinates} />
         <Grid container spacing={3} style={{ width: "100%" }}>
-          <Grid item xs={12} md={4}>
-            <Sidebar
-              places={filteredPlaces.length > 0 ? filteredPlaces : allPlaces}
-              clickedChild={clickedChild}
-              loading={loading}
-              type={type}
-              setType={setType}
-              rating={rating}
-              setRating={setRating}
-            />
-          </Grid>
-          <Grid item xs={12} md={8}>
+          <Sidebar
+            places={filteredPlaces.length > 0 ? filteredPlaces : allPlaces}
+            clickedChild={clickedChild}
+            loading={loading}
+            type={type}
+            setType={setType}
+            rating={rating}
+            setRating={setRating}
+          />
             <Map
               setCoordinates={setCoordinates}
               setBounds={setBounds}
@@ -88,7 +85,6 @@ const Home: NextPage = () => {
               setClickedChild={setClickedChild}
               weatherData={weatherData}
             />
-          </Grid>
         </Grid>
       </main>
     </div>
@@ -96,12 +92,3 @@ const Home: NextPage = () => {
 };
 
 export default Home;
-
-// export const getServerSideProps = async (context) => {
-//   const res = await getPlacesData();
-//   return {
-//     props: {
-//       places: res,
-//     },
-//   };
-// };

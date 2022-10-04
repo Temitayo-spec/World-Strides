@@ -11,8 +11,6 @@ export const sidebarStyles = makeStyles((theme) => ({
   container: {
     padding: "25px",
     width: "100%",
-    backgroundColor: "#f5f5f5",
-    boxShadow: "0px 1px 3px rgba(0,0,0,0.12), 0px 1px 2px rgba(0,0,0,0.24)",
   },
   marginBottom: {
     marginBottom: "20px",
@@ -27,9 +25,14 @@ export const sidebarStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(2),
   },
   list: {
-    height: "55vh",
     overflow: "auto",
     color: "#f5f5f5",
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fill, minmax(360px, 1fr))",
+    gridGap: "1em",
+    padding: "0",
+    margin: "0 0 1em 0",
+    height: "55vh",
 
     "&::-webkit-scrollbar": {
       width: "0.4em",
@@ -39,7 +42,13 @@ export const sidebarStyles = makeStyles((theme) => ({
       webkitBoxShadow: "inset 0 0 6px rgba(0,0,0,0.00)",
     },
   },
-  select: {
-    color: "#1e1e1e",
+  text: {
+    color: "#990011FF",
+    textAlign: "center",
+    margin: "0",
+
+    "@media (max-width: 600px)": {
+      fontSize: "1.2rem",
+    },
   },
 }));

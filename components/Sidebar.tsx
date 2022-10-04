@@ -30,7 +30,7 @@ const Sidebar = ({
   rating,
   setRating,
 }: Props): JSX.Element => {
-  const classes = sidebarStyles();
+  const classes = sidebarStyles() as any;
 
   const [elRefs, setElRefs] = useState([]);
 
@@ -40,12 +40,12 @@ const Sidebar = ({
       .map((_, i) => elRefs[i] || createRef());
 
     setElRefs(refs);
-  }, [places]);
+  }, [elRefs, places]);
 
   return (
     <div className={classes.container}>
-      <Typography variant="h4" align="center">
-        Restaurants, Hotels and Attractions around you
+      <Typography variant="h4" align="center" className={classes.text}>
+        Explore Restaurants, Hotels & Attractions around you
       </Typography>
       {loading ? (
         <div className={classes.loading}>
@@ -53,22 +53,26 @@ const Sidebar = ({
         </div>
       ) : (
         <>
-          <FormControl className={classes.formControl}>
-            <InputLabel>Type</InputLabel>
+          <FormControl variant="outlined" className={classes.formControl}>
+            <InputLabel id="demo-simple-select-helper-label">Type</InputLabel>
             <Select
               value={type}
               onChange={(e) => setType(e.target.value as any)}
+              labelId="demo-simple-select-helper-label"
+              id="demo-simple-select-helper"
             >
               <MenuItem value="restaurants">Restaurants</MenuItem>
               <MenuItem value="hotels">Hotels</MenuItem>
               <MenuItem value="attractions">Attractions</MenuItem>
             </Select>
           </FormControl>
-          <FormControl className={classes.formControl}>
-            <InputLabel>Rating</InputLabel>
+          <FormControl variant="outlined" className={classes.formControl}>
+            <InputLabel id="demo-simple-select-helper-label">Rating</InputLabel>
             <Select
               value={rating}
               onChange={(e) => setRating(e.target.value as any)}
+              labelId="demo-simple-select-helper-label"
+              id="demo-simple-select-helper"
             >
               <MenuItem value={0}>All</MenuItem>
               <MenuItem value={3}>Above 3.0</MenuItem>

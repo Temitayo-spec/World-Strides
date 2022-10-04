@@ -22,10 +22,11 @@ export const getPlacesData = async (
           tr_longitude: ne?.lng ?? 0,
         },
         headers: {
-    'X-RapidAPI-Key': process.env.NEXT_PUBLIC_RAPID_TRAVEL_API_KEY as string,
-    'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
-  }
-      },
+          "X-RapidAPI-Key": process.env
+            .NEXT_PUBLIC_RAPID_TRAVEL_API_KEY as string,
+          "X-RapidAPI-Host": "travel-advisor.p.rapidapi.com",
+        },
+      }
     );
     return data;
   } catch (error) {
@@ -36,10 +37,10 @@ export const getPlacesData = async (
 export const getWeatherData = async (lat: number, lng: number) => {
   try {
     const weather = await axios.get(
-      `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lng}&exclude=hourly,daily&appid=3a8f05b0c1af860e8551e88c22270268`
+      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=3a8f05b0c1af860e8551e88c22270268`
     );
-    console.log({ weather });
-    return weather;
+    console.log(weather.data);
+    return weather.data;
   } catch (error) {
     console.log(error);
   }

@@ -30,7 +30,7 @@ const PlaceDetails = ({ place, selected, refProp }: Props): JSX.Element => {
   }
   return (
     <div>
-      <Card elevation={6}>
+      <Card elevation={6} className={classes.root}>
         <CardMedia
           style={{ height: 350 }}
           image={
@@ -45,7 +45,7 @@ const PlaceDetails = ({ place, selected, refProp }: Props): JSX.Element => {
             {place.name}
           </Typography>
           <Box display="flex" justifyContent="space-between">
-            <Rating size="small" value={Number(place.rating)} readOnly />
+            <Rating size="small" value={Number(place.rating)} color="primary" readOnly />
             out of {place.num_reviews} reviews
           </Box>
           <Box display="flex" justifyContent="space-between">

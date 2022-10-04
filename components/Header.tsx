@@ -33,7 +33,7 @@ const Header = ({ setCoordinates }: Props): JSX.Element => {
         <Typography variant="h5" className={classes.title}>
           World Strides
         </Typography>
-        <Box display="flex" className={classes.flex}>
+        {/* <Box display="flex" className={classes.flex}>
           <Typography variant="h6" className={classes.title}>
             Explore new places
           </Typography>
@@ -42,7 +42,7 @@ const Header = ({ setCoordinates }: Props): JSX.Element => {
             libraries={["places"]}
           >
             <Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}> */}
-          <div className={classes.search}>
+          {/* <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
@@ -55,9 +55,9 @@ const Header = ({ setCoordinates }: Props): JSX.Element => {
               inputProps={{ "aria-label": "search" }}
             />
           </div>
-          {/* </Autocomplete>
-          </LoadScript> */}
-        </Box>
+          </Autocomplete>
+          </LoadScript> 
+        </Box> */}
       </Toolbar>
     </AppBar>
   );
