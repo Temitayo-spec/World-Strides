@@ -95,7 +95,7 @@ const Sidebar = ({
           </FormControl>
           <Grid container spacing={3} className={classes.list}>
             {places?.map((place: any, i: number) => (
-              <Grid ref={elRefs[i]} item key={i} xs={12}>
+              <Grid ref={elRefs[i]} item key={i}>
                 <PlaceDetails
                   selected={Number(clickedChild) === i}
                   refProp={elRefs[i]}

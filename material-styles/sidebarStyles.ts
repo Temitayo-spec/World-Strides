@@ -11,6 +11,12 @@ export const sidebarStyles = makeStyles((theme) => ({
   container: {
     padding: "25px",
     width: "100%",
+
+    [theme.breakpoints.down("md")]: {
+      padding: 0,
+      width: "100%",
+      margin: "0.5em auto",
+    },
   },
   marginBottom: {
     marginBottom: "20px",
@@ -20,6 +26,8 @@ export const sidebarStyles = makeStyles((theme) => ({
     minWidth: 120,
     marginBottom: "20px",
     marginRight: "30px",
+    marginTop: "5px",
+    marginLeft: "2em",
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
