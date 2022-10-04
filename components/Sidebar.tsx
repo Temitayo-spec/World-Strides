@@ -53,7 +53,12 @@ const Sidebar = ({
           <CircularProgress size="3rem" />
         </div>
       ) : (
-        <>
+          <div style={{
+            display: "flex",
+            padding: "10px",
+            width: "100%",
+            justifyContent: "space-between",
+        }}>
           <FormControl className={classes.formControl}>
             <InputLabel
               className={classes.text}
@@ -105,7 +110,7 @@ const Sidebar = ({
               </Grid>
             ))}
           </Grid>
-        </>
+        </div>
       )}
     </div>
   );
