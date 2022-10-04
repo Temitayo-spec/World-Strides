@@ -56,8 +56,6 @@ const Sidebar = ({
           <div style={{
             display: "flex",
             padding: "10px",
-            width: "100%",
-            justifyContent: "space-between",
         }}>
           <FormControl className={classes.formControl}>
             <InputLabel
