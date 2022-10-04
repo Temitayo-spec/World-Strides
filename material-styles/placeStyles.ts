@@ -3,6 +3,10 @@ import { makeStyles } from "@material-ui/core/styles";
 export const placeStyles = makeStyles(() => ({
   root: {
     color: "#990011FF !important",
+    
+    "@media (max-width: 600px)": {
+      width: "90%",
+    },
   },
   spacing: {
     margin: "1rem 0",

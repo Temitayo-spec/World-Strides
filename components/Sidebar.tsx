@@ -40,7 +40,7 @@ const Sidebar = ({
       .map((_, i) => elRefs[i] || createRef());
 
     setElRefs(refs);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [places]);
 
   return (

@@ -34,7 +34,7 @@ export const sidebarStyles = makeStyles((theme) => ({
     margin: "0 0 1em 0",
     height: "55vh",
     "@media(max-width: 600px)": {
-      width: "100%"
+      width: "100%",
     },
 
     "&::-webkit-scrollbar": {
