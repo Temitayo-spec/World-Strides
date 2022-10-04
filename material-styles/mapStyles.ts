@@ -53,9 +53,10 @@ export const mapStyles = makeStyles(() => ({
   toggle__icon__active: {
     color: "#3c3c3c",
     transform: "rotate(180deg)",
+    transition: "transform 0.4s ease"
   },
   mapContainerToggle: {
-    height: "14vh",
+    height: "16vh",
   },
 
   map: {
