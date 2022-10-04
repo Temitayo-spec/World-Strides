@@ -24,9 +24,9 @@ export const sidebarStyles = makeStyles((theme) => ({
   formControl: {
     color: "#f5f5f5",
     minWidth: 120,
-    marginBottom: "20px",
-    marginRight: "30px",
-    marginTop: "5px",
+    marginBottom: 20,
+    marginRight: 30,
+    marginTop: 5,
     marginLeft: "2em",
   },
   selectEmpty: {
