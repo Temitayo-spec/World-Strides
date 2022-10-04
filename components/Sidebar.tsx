@@ -54,7 +54,6 @@ const Sidebar = ({
         </div>
       ) : (
           <div style={{
-            display: "flex",
             padding: "10px",
         }}>
           <FormControl className={classes.formControl}>
