@@ -26,13 +26,13 @@ const PlaceDetails = ({ place, selected, refProp, id }: Props): JSX.Element => {
     refProp?.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   }
   return (
-    <Link
-      href={`/details/${id}`}
-      onClick={() => {
-        localStorage.setItem("place", JSON.stringify(place));
-      }}
-    >
-      <div style={{ cursor: "pointer" }}>
+    <Link href={`/details/${id}`}>
+      <div
+        onClick={() => {
+          localStorage.setItem("place", JSON.stringify(place));
+        }}
+        style={{ cursor: "pointer" }}
+      >
         <Card elevation={6} className={classes.root}>
           <CardMedia
             style={{ height: 350 }}
