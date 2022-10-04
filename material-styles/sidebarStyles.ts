@@ -23,8 +23,11 @@ export const sidebarStyles = makeStyles((theme) => ({
   },
   formControl: {
     color: "#f5f5f5",
-    minWidth: 130,
-    margin: "0.5em",
+    minWidth: 120,
+    marginBottom: 20,
+    marginRight: 30,
+    marginTop: 5,
+    marginLeft: "2em",
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
