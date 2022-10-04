@@ -10,13 +10,13 @@ export const mapStyles = makeStyles(() => ({
     width: "100%",
   },
   mapContainer: {
-    height: "100vh",
+    height: "90vh",
     width: "100%",
     position: "fixed",
     left: 0,
     bottom: 0,
     zIndex: 1,
-    padding: "2em",
+    padding: "0.5em",
     borderRadius: "0.5em",
     transition: "all 0.5s ease",
   },
@@ -55,6 +55,11 @@ export const mapStyles = makeStyles(() => ({
     transform: "rotate(180deg)",
   },
   mapContainerToggle: {
-    height: "18vh",
+    height: "14vh",
+  },
+
+  map: {
+    height: "89%",
+    width: "100%",
   },
 }));

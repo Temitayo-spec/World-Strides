@@ -20,12 +20,13 @@ export const sidebarStyles = makeStyles((theme) => ({
     margin: theme.spacing(2),
     minWidth: 120,
     marginBottom: "20px",
+    marginRight: "20px",
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
   },
   list: {
-    overflow: "auto",
+    overflowY: "auto",
     color: "#f5f5f5",
     display: "grid",
     gridTemplateColumns: "repeat(auto-fill, minmax(360px, 1fr))",
@@ -33,6 +34,9 @@ export const sidebarStyles = makeStyles((theme) => ({
     padding: "0",
     margin: "0 0 1em 0",
     height: "55vh",
+    "@media(max-width: 600px)": {
+      width: "100%"
+    },
 
     "&::-webkit-scrollbar": {
       width: "0.4em",

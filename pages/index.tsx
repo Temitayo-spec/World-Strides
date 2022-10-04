@@ -29,11 +29,11 @@ const Home: NextPage = () => {
   }, []);
 
   useEffect(() => {
-    const filteredPlaces = allPlaces.filter(
+    const filteredPlaces = allPlaces?.filter(
       (place: any) => place.rating > rating
     );
     setFilteredPlaces(filteredPlaces);
-  }, [allPlaces, rating]);
+  }, [rating]);
 
   useEffect(() => {
     if (bounds.sw && bounds.ne) {
@@ -55,7 +55,7 @@ const Home: NextPage = () => {
       };
       getData();
     }
-  }, [bounds, coordinates?.lat, coordinates?.lng, type]);
+  }, [bounds, type]);
   return (
     <div className={styles.container}>
       <Head>
@@ -67,9 +67,9 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <CssBaseline />
         <Header setCoordinates={setCoordinates} />
-        <Grid container spacing={3} style={{ width: "100%" }}>
+        <Grid container style={{ width: "100%" }}>
           <Sidebar
-            places={filteredPlaces.length > 0 ? filteredPlaces : allPlaces}
+            places={filteredPlaces?.length > 0 ? filteredPlaces : allPlaces}
             clickedChild={clickedChild}
             loading={loading}
             type={type}
@@ -81,7 +81,7 @@ const Home: NextPage = () => {
               setCoordinates={setCoordinates}
               setBounds={setBounds}
               coordinates={coordinates}
-              places={filteredPlaces.length > 0 ? filteredPlaces : allPlaces}
+              places={filteredPlaces?.length > 0 ? filteredPlaces : allPlaces}
               setClickedChild={setClickedChild}
               weatherData={weatherData}
             />

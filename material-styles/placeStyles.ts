@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-export const placeStyles = makeStyles((theme) => ({
+export const placeStyles = makeStyles(() => ({
   root: {
     color: "#990011FF !important",
   },
@@ -20,5 +20,16 @@ export const placeStyles = makeStyles((theme) => ({
   },
   chip: {
     margin: "0.5rem",
+  },
+  inner: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "100%",
+    gap: 20,
+
+    "@media (max-width: 600px)": {
+      flexDirection: "column",
+    },
   },
 }));
